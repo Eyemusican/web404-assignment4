@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Check username</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 760px; margin: 40px auto; padding: 0 16px; }
+    input { padding: 6px; width: 320px; }
+    button { padding: 8px 16px; }
+    .status { font-size: 20px; font-weight: bold; margin-top: 16px; }
+    a { display: inline-block; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>4. Check username (boolean based blind)</h1>
+  <p>Tells you only whether a username exists. No other data is shown.</p>
+  <form method="GET" action="/check">
+    <input type="text" name="username" value="<%= username %>" autocomplete="off" placeholder="e.g. admin">
+    <button type="submit">Check</button>
+  </form>
+
+  <% if (status) { %>
+    <p class="status">Username <%= status %>.</p>
+  <% } %>
+
+  <a href="/">&larr; Home</a>
+</body>
+</html>

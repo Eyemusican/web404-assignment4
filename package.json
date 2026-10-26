@@ -1,0 +1,15 @@
+{
+  "name": "web404-assignment4-sqli",
+  "version": "1.0.0",
+  "description": "WEB404 Assignment 4 - deliberately vulnerable app for demonstrating SQL injection attacks",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "seed": "node seed.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "sqlite3": "^5.1.7"
+  }
+}

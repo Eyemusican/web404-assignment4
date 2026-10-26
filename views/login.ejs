@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Login</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 760px; margin: 40px auto; padding: 0 16px; }
+    label { display: block; margin: 8px 0 2px; }
+    input { padding: 6px; width: 260px; }
+    button { margin-top: 12px; padding: 8px 16px; }
+    .ok { color: #070; font-weight: bold; }
+    .fail { color: #a00; font-weight: bold; }
+    .err { color: #a00; background: #fee; padding: 8px; white-space: pre-wrap; }
+    a { display: inline-block; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>1. Login (authentication bypass)</h1>
+  <form method="POST" action="/login">
+    <label>Username</label>
+    <input type="text" name="username" autocomplete="off">
+    <label>Password</label>
+    <input type="text" name="password" autocomplete="off">
+    <button type="submit">Log in</button>
+  </form>
+
+  <% if (result && result.user) { %>
+    <p class="ok">Logged in as <%= result.user.username %> (role: <%= result.user.role %>)</p>
+  <% } else if (result && result.failed) { %>
+    <p class="fail">Invalid username or password.</p>
+  <% } else if (result && result.error) { %>
+    <p class="err"><%= result.error %></p>
+  <% } %>
+
+  <a href="/">&larr; Home</a>
+</body>
+</html>
